@@ -1,17 +1,87 @@
 
-@media all and (max-width: 500px) {
-    body {
-      background-color: lightblue;
-    }
-  }
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
 
-  
-  body {
-    text-align: center;
+:root{
+  --bg: #ffffff;
+  --muted: #f3f4f6;
+  --accent: #0d6efd; /* Bootstrap primary blue */
+  --brand: #f5e9dc; /* soft beige used previously */
+  --text: #222222;
+  --max-width: 1200px;
+}
 
-  }
+/* Reset & base */
+*{box-sizing: border-box}
+html,body{height:100%;margin:0;padding:0}
+body{
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  color:var(--text);
+  background:var(--bg);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  text-align: left; /* pages should layout left-to-right normally */
+  line-height:1.45;
+}
 
-  form {
-    display: inline-block ;
+/* Utility container used across pages */
+.site-container{max-width:var(--max-width);margin:0 auto;padding:0 1rem}
 
-  }
+/* Header / navbar overrides */
+.navbar{background-color:var(--brand)!important}
+.navbar .navbar-nav .nav-link{color:var(--text);padding:.5rem 1rem}
+.navbar .navbar-brand img{max-height:90px;width:auto}
+
+/* Carousel tweaks */
+.carousel-item img{object-fit:cover;height:400px}
+
+/* Cards */
+.card .card-img-top{object-fit:cover}
+
+/* Form utilities */
+form{display:inline-block}
+
+/* Footer */
+footer.bg-light{background:var(--brand);padding:2rem 1rem;margin-top:2rem}
+footer .newsletter .content{display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;justify-content:center}
+footer .newsletter input[type="email"]{max-width:360px;padding:.5rem .75rem}
+footer .newsletter button{padding:.45rem .9rem}
+
+/* Small helpers */
+.text-center{text-align:center}
+
+/* Responsive: mobile-first */
+@media (max-width: 575.98px){
+  .carousel-item img{height:220px}
+  .navbar .navbar-brand img{max-height:70px}
+  footer .newsletter .content{padding:0 0.5rem}
+}
+
+@media (min-width: 576px) and (max-width: 991.98px){
+  .carousel-item img{height:300px}
+  .navbar .navbar-brand img{max-height:80px}
+}
+
+@media (min-width: 992px){
+  body{text-align:center} /* keep center on large screens as original design intended */
+  .carousel-item img{height:500px}
+}
+
+/* Accessibility: focus states */
+a:focus,a:hover{outline:none;text-decoration:underline}
+
+/* Make images responsive when widths/heights are set inline */
+img{max-width:100%;height:auto}
+
+/* Small visual polish for buttons */
+.btn-primary{background:var(--accent);border-color:var(--accent)}
+
+/* End of custom site styles */
+
+/* Form helpers (moved from page inline styles) */
+.form-example{text-align:center;width:40%;margin:1.5rem auto;background:#fff;padding:1.25rem;border-radius:.6rem;box-shadow:0 6px 18px rgba(0,0,0,.06)}
+#formdiv{margin:0;background:rgb(250,250,250)}
+
+@media (max-width: 768px){
+  .form-example{width:92%}
+}
